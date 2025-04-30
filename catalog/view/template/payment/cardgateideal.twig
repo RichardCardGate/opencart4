@@ -5,24 +5,9 @@
 
         <div class="border rounded p-3 mb-3">
             <input type="hidden" name="option" value="ideal" />
-            {% if show_issuers %}
-            <fieldset class="payment">
-                <legend>{{ text_ideal_bank_selection }}</legend>
-                <label style="position: relative; padding-right: 10px;" class="method" >
-                    <img style="height:80px; max-width:100px" src="./image/payment/cgp/ideal.svg" alt="iDEAL" />
-                </label>
-                <label style="position: relative; width: 200px;" class="issuers" for="CGP_IDEAL_ISSUER">
-                    <select id="CGP_IDEAL_ISSUER" name="suboption">
-                        {{ text_ideal_bank_options }}
-                    </select>
-                </label>
-            </fieldset>
-            {% endif %}
-            {% if not show_issuers %}
-                <label style="position: relative;" class="method" >
-                    <img style="height:80px; max-width:100px" src="./image/payment/cgp/ideal.svg" alt="iDEAL" />
-                </label>
-            {% endif %}
+            <label style="position: relative;" class="method" >
+                <img style="height:80px; max-width:100px" src="./image/payment/cgp/ideal.svg" alt="iDEAL" />
+            </label>
         </div>
 
         <div class="d-inline-block pt-2 pd-2 w-100 text-end">

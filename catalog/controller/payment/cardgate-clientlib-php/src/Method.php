@@ -243,39 +243,6 @@ namespace cardgate\api {
 		public function getName() {
 			return $this->_sName;
 		}
-
-		/**
-		 * This method returns all the issuers available for the current payment method.
-		 * @return array An array with issuers
-		 * @throws Exception
-		 * @access public
-		 * @api
-		 */
-		public function getIssuers() {
-
-			if ( TRUE ) {
-				// Use the static version which is automatically updated every day
-				$aResult = [
-					'issuers' => $this->_oClient->doRequest(
-						$this->_oClient->getTestMode()
-							?   '../../../cache/idealDirectoryCUROPayments-TEST.json'
-							:   '../../../cache/idealDirectoryCUROPayments.json'
-						, NULL, 'GET'
-					)
-				];
-			} else {
-				// Retrieve using API call.
-				// TODO: The response should be cached on the local system for 24 hours!
-				$sResource = $this->_sId . '/issuers/';
-				$aResult = $this->_oClient->doRequest( $sResource, NULL, 'GET' );
-			}
-			if ( empty( $aResult['issuers'] ) ) {
-				throw new Exception( 'Method.Issuers.Invalid', 'invalid issuer data returned' );
-			}
-
-			return $aResult['issuers'];
-		}
-
 	}
 
 }
