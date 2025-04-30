@@ -22,4 +22,3 @@ $_['heading_title']                 = 'iDEAL';
 // Text
 include_once 'cardgate.php';
 $_['text_title']                    = 'iDEAL';
-$_['text_ideal_bank_selection']     = 'Please choose your bank';
