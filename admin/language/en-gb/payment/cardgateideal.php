@@ -36,8 +36,6 @@ $_['entry_geo_zone']                    = 'Geo Zone:';
 $_['entry_sort_order']                  = 'Sort Order:';
 $_['entry_geo_zone']                    = 'Geo Zone';
 $_['entry_status']                      = 'Status';
-$_['entry_show_issuers']                = 'Show issuers';
-$_['entry_show_issuers_explain']        = 'iDEAL v2 will not show issuers any more by default (Mandatory by iDEAL).';
 
 // Error
 $_['error_permission']                  = 'Warning: You do not have permission to modify payment CardGate!';

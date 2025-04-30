@@ -34,8 +34,6 @@ $_['entry_order_status']                = 'Order Status';
 $_['entry_geo_zone']                    = 'Geo Zone:';
 $_['entry_sort_order']                  = 'Sorteer Volgorde:';
 $_['entry_status']                      = 'Status';
-$_['entry_show_issuers']                = 'Toon issuers (banken)';
-$_['entry_show_issuers_explain']        = 'iDEAL v2 laat standaard geen issuers (banken) meer zien (Verplicht door iDEAL).';
 
 // Error
 $_['error_permission']       = 'Waarschuwing: U heeft geen toestemming om de CardGate betaalmethode te wijzigen!';
