@@ -451,6 +451,7 @@ namespace cardgate\api {
 
 			if ( ! empty( $this->_oPaymentMethod ) ) {
 				$aData['pt'] = $this->_oPaymentMethod->getId();
+				$aData['issuer'] = $this->_sIssuer;
 			}
 
 			$aData = array_filter( $aData ); // remove NULL values

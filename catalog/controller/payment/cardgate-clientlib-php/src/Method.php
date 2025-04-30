@@ -142,6 +142,11 @@ namespace cardgate\api {
 		 */
 		const SPRAYPAY = 'spraypay';
 
+        /**
+         * Crypto
+         */
+        const CRYPTO = 'crypto';
+
 		/**
 		 * The client associated with this payment method.
 		 * @var Client
@@ -243,6 +248,19 @@ namespace cardgate\api {
 		public function getName() {
 			return $this->_sName;
 		}
+
+		/**
+		 * This method returns all the issuers available for the current payment method.
+		 * @return array An array with issuers
+		 * @throws Exception
+		 * @access public
+		 * @api
+		 */
+		public function getIssuers() {
+            $aIssuers   = [0=>["id"=>"ZERO", "name"=>"Deprecated"]];
+			return  $aIssuers; //Deprecated since iDEAL2
+		}
+
 	}
 
 }
