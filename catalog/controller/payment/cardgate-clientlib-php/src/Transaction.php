@@ -96,6 +96,13 @@ namespace cardgate\api {
 		protected $_oPaymentMethod = NULL;
 
 		/**
+		 * The payment method issuer for the transaction.
+		 * @var string
+		 * @access protected
+		 */
+		protected $_sIssuer = NULL;
+
+		/**
 		 * The recurring flag
 		 * @var bool
 		 * @access private
@@ -386,6 +393,35 @@ namespace cardgate\api {
 		}
 
 		/**
+		 * Set the optional payment method issuer to use for the transaction.
+		 * @param string $sIssuer_ The payment method issuer to use for the transaction.
+		 * @return $this
+		 * @throws Exception
+		 * @access public
+		 * @api
+		 */
+		public function setIssuer( $sIssuer_ ) {
+			if (
+				empty( $this->_oPaymentMethod )
+				|| ! is_string( $sIssuer_ )
+			) {
+				throw new Exception( 'Transaction.Issuer.Invalid', 'invalid issuer: ' . $sIssuer_ );
+			}
+			$this->_sIssuer = $sIssuer_;
+			return $this;
+		}
+
+		/**
+		 * Get the optional payment method issuer that will be used for the transaction.
+		 * @return string The payment method issuer that will be used for the transaction.
+		 * @access public
+		 * @api
+		 */
+		public function getIssuer() {
+			return $this->_sIssuer;
+		}
+
+		/**
 		 * Set the recurring flag on the transaction.
 		 * @param bool $bRecurring_ Wether or not this transaction can be used for recurring.
 		 * @return $this
@@ -631,6 +667,7 @@ namespace cardgate\api {
 			$sResource = 'payment/';
 			if ( ! empty( $this->_oPaymentMethod ) ) {
 				$sResource .= $this->_oPaymentMethod->getId() . '/';
+				$aData['issuer'] = $this->_sIssuer;
 			}
 
 			$aData = array_filter( $aData ); // remove NULL values
