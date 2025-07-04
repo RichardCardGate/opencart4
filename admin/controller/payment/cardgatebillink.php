@@ -12,10 +12,5 @@ class CardgateBillink extends CardgateGeneric {
     public function save() {
         return $this->_save('cardgatebillink');
     }
-    public function install() {
-        $this->load->model('extension/cardgate/payment/cardgatebillink');
-     //   $this->model_setting_event->addEvent('checkout_payment_before','onCheckoutPaymentBefore');
-    }
-
 }
 ?>
